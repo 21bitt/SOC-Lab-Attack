@@ -1,4 +1,4 @@
-[# SOC-Lab-Attack
+# SOC-Lab-Attack
 report of Reconnasissance, Credential Access, Initial Access, Discovery, Lateral Movement, Collection/Exfiltration, Persistence, and C2
 
 # Lab-X Exercise Outcomes
