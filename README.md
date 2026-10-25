@@ -1,6 +1,6 @@
 # Lab-X Exercise Outcomes
 
-Environment build: [README.md](README.md).
+Environment build: [README.md](https://github.com/21bitt/SOC-Lab/blob/main/README.md).
 
 This file records what was practiced on the lab VMs, what showed up, and what to fix or alert on. It is not a command-by-command attack playbook. Work was done on hosts you own on `lab-x-network` only.
 
