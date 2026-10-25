@@ -1,6 +1,3 @@
-# SOC-Lab-Attack
-report of Reconnasissance, Credential Access, Initial Access, Discovery, Lateral Movement, Collection/Exfiltration, Persistence, and C2
-
 # Lab-X Exercise Outcomes
 
 Environment build: [README.md](README.md).
@@ -37,11 +34,11 @@ All of this ran from `lab-x-kali` (`10.0.0.50`) against the lab NAT network. Des
 
 12. **Study account.** `lab-x-user` was created, added to local Administrators and Domain Admins, and checked with `net user lab-x-user /domain`.
 
-13. **Scheduled task.** Task `PersistenceTask` was set to run daily at 12:00 and pointed at a PowerShell file under the Administrator AppData Windows folder. Task Scheduler Library showed the task.
+13. **Scheduled task.** Task `PersistenceTask` was set to run daily at 12:00 and pointed at a PowerShell file under the Administrator AppData Windows folder. Task Scheduler Library showed the task. Lab note: [scheduled task example](https://github.com/21bitt/SOC-Lab/blob/main/scheduled%20task%20example).
 
-14. **Callback check.** Kali listened on TCP 4444. The script was started from the DC session. The listener showed a connect from `10.0.0.5` and the line `Connected to reverse shell!`
+14. **Callback check.** Kali listened on TCP 4444. The script was started from the DC session. The listener showed a connect from `10.0.0.5` and the line `Connected to reverse shell!` Lab note: [reverse.ps1 example](https://github.com/21bitt/SOC-Lab/blob/main/reverse.ps1%20example).
 
-15. **No cleanup.** Logs and artifacts were left so Wazuh and Windows Security logs can be reviewed. The script source is not published here.
+15. **No cleanup.** Logs and artifacts were left so Wazuh and Windows Security logs can be reviewed.
 
 The sections below repeat the same work with tables and defense notes.
 
@@ -136,10 +133,10 @@ Mock file `C:\Users\Administrator\Documents\ProductionFiles\secrets.txt` was cop
 Study persistence left in place:
 
 - Account `lab-x-user` added to local Administrators and Domain Admins (checked with `net user lab-x-user /domain`)
-- Scheduled task `PersistenceTask`, daily at 12:00, pointed at a PowerShell file under Administrator AppData
-- A connect from `10.0.0.5` to Kali TCP 4444 with the line `Connected to reverse shell!`
+- Scheduled task `PersistenceTask`, daily at 12:00, pointed at a PowerShell file under Administrator AppData. See [scheduled task example](https://github.com/21bitt/SOC-Lab/blob/main/scheduled%20task%20example)
+- A connect from `10.0.0.5` to Kali TCP 4444 with the line `Connected to reverse shell!` See [reverse.ps1 example](https://github.com/21bitt/SOC-Lab/blob/main/reverse.ps1%20example)
 
-The script source is not published here. No log wiping was done so Wazuh and Windows logs can be reviewed.
+No log wiping was done so Wazuh and Windows logs can be reviewed.
 
 ### Defenses
 
@@ -150,5 +147,3 @@ The script source is not published here. No log wiping was done so Wazuh and Win
 - Alert on new scheduled tasks and PowerShell with execution-policy bypass.
 - Outbound TCP from the DC to a client on port 4444 is a useful Wazuh or firewall finding.
 - Treat `Documents\ProductionFiles` on the DC as a high-value path in FIM.
-
-](https://github.com/21bitt/SOC-Lab/blob/main/scheduled%20task%20example)
