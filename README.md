@@ -1,4 +1,4 @@
-# SOC-Lab-Attack
+[# SOC-Lab-Attack
 report of Reconnasissance, Credential Access, Initial Access, Discovery, Lateral Movement, Collection/Exfiltration, Persistence, and C2
 
 # Lab-X Exercise Outcomes
@@ -151,3 +151,4 @@ The script source is not published here. No log wiping was done so Wazuh and Win
 - Outbound TCP from the DC to a client on port 4444 is a useful Wazuh or firewall finding.
 - Treat `Documents\ProductionFiles` on the DC as a high-value path in FIM.
 
+](https://github.com/21bitt/SOC-Lab/blob/main/scheduled%20task%20example)
