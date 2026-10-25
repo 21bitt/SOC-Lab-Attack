@@ -10,7 +10,7 @@ This file records what was practiced on the lab VMs, what showed up, and what to
 
 All of this ran from `lab-x-kali` (`10.0.0.50`) against the lab NAT network. Designated lab secrets used on purpose: `root@corp-svr` / `november`, and domain `Administrator` / `@Deeboodah1!`.
 
-1. **First service map (ports 1-1000).** A TCP service scan of the lab subnet showed eight live addresses. The DC (`10.0.0.5`) advertised DNS, Kerberos, LDAP, and SMB for `corp.lab-x-dc.com`. `corp-svr` (`10.0.0.8`) showed only SSH in that range. `lab-x-sec-mon` (`10.0.0.10`) showed HTTPS with `osd-name: sec-mon`. `lab-x-ubu-client` (`10.0.0.101`) showed SSH and Postfix. Kali itself showed SSH and Apache.
+1. **First service map (ports 1-65535).** A TCP service scan of the lab subnet showed eight live addresses. The DC (`10.0.0.5`) advertised DNS, Kerberos, LDAP, and SMB for `corp.lab-x-dc.com`. `corp-svr` (`10.0.0.8`) showed only SSH in that range. `lab-x-sec-mon` (`10.0.0.10`) showed HTTPS with `osd-name: sec-mon`. `lab-x-ubu-client` (`10.0.0.101`) showed SSH and Postfix. Kali itself showed SSH and Apache.
 
 2. **Weak SSH on the mail host.** Port 22 on `10.0.0.8` was open. The lab `root` password was a dictionary word set for this exercise. After it was recovered, an SSH session as `root@corp-svr` worked.
 
